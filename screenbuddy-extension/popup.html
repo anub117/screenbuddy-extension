@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ScreenBuddy</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container" id="appBody">
+    <header>
+      <div class="logo">
+        <div class="icon"></div>
+        <h1>ScreenBuddy</h1>
+      </div>
+      <span class="mood-icon" id="moodIcon">😊</span>
+    </header>
+
+    <div id="viewSummary" class="view active">
+      <div class="summary-cards">
+        <div class="card">
+          <span class="label">Today's Time</span>
+          <span class="value" id="totalTime">--</span>
+        </div>
+        <div class="card">
+          <span class="label">Top Site</span>
+          <span class="value top-site" id="topSites">--</span>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="chart"></canvas>
+      </div>
+
+      <section class="panel">
+        <div class="section-header">
+          <span class="list-header">Gentle Limits</span>
+          <span class="helper-text" id="limitStatus"></span>
+        </div>
+
+        <form id="limitForm" class="limit-form">
+          <input id="domainInput" type="text" placeholder="Domain, e.g. youtube.com" autocomplete="off">
+          <div class="limit-form-row">
+            <input id="limitMinutes" type="number" min="1" step="1" placeholder="Minutes">
+            <button type="submit" class="primary-button">Save</button>
+          </div>
+        </form>
+
+        <div id="limitsList" class="styled-list"></div>
+      </section>
+
+      <div class="list-header">Usage List</div>
+      <div id="list" class="styled-list"></div>
+    </div>
+  </div>
+
+  <script src="chart.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

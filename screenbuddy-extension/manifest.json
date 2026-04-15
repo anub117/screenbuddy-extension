@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "ScreenBuddy - Minimal Digital Wellbeing Tracker",
+  "short_name": "ScreenBuddy",
+  "version": "1.0",
+  "description": "Track time spent on websites with a clean, minimal interface.",
+
+  "permissions": ["tabs", "storage", "idle", "notifications"],
+  "host_permissions": ["<all_urls>"],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ScreenBuddy",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
